@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @historium.nome %></h1>
+
+<table>
+  <tbody>
+    <% @Opcao.each do |opcoes| %>
+      <tr>
+        <td><%= opcoes.texto %></td>
+        <td><%= link_to 'Next', @nexthistoria = Historium.where("id = ?", opcoes.filhahistoria_id).take %></td>
+      </tr>
+    <% end %>  
+    <tr>
+      <td><%= @historium.texto %></td>
+      <td><%= @historium.imagem %></td>
+    </tr>
+  </tbody>
+</table>
+
+<br>

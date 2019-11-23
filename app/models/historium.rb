@@ -1,0 +1,2 @@
+class Historium < ApplicationRecord
+end
