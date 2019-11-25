@@ -1,19 +1,34 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RPG</title>
+    <p id="notice"><%= notice %></p>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+  </head>
 
-<h1><%= @historia.nome %></h1>
+<body >
+  <div class="page-loader">
+    <div class="page-loader-body">
+      <div class="cssload-jumping"><span></span><span></span><span></span><span></span><span></span></div>
+    </div>
+  </div>
+  <div class="page text-center">
+    <section>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-sm-10 col-lg-8">
+            <hr class="divider-sm divider-success">
+            <h1 class="textillate text-white" data-loop="true"> <span class="textillate-text"> <span data-in-effect="pulse" data-out-effect="pulseOut">Seja bem vindo</span> <span data-in-effect="pulse" data-out-effect="pulseOut">a um mundo de fantasia</span> <span data-in-effect="pulse" data-out-effect="pulseOut">aventuras e imaginação!</span> </h1>
+            <p class="subtitle-variant-1 text-success">Feito por Orion</p> <a class="btn btn-white-outline btn-lg btn-aqil btn-aqil--mod-1" href="https://codecanyon.net/item/novi-visual-page-builder/20530305?s_rank=4"> <span>Inicie a sua Jornada</span> </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="snackbars" id="form-output-global"></div>
+</body>
 
-<table>
-  <tbody>
-    <% @Opcao.each do |opcoes| %>
-      <tr>
-        <td><%= opcoes.texto %></td>
-        <td><%= link_to 'Next', @nexthistoria = Historium.where("id = ?", opcoes.filhahistoria_id).take %></td>
-      </tr>
-    <% end %>  
-    <tr>
-      <td><%= @historia.texto %></td>
-      <td><%= @historia.imagem %></td>
-    </tr>
-  </tbody>
-</table>
-<br>
+</html>

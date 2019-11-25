@@ -4,8 +4,7 @@ class HistoriaController < ApplicationController
   # GET /historia
   # GET /historia.json
   def index
-    @historia = Historium.first
-    @Opcao = Opcao.where("paihistoria_id = ?", @historia.id) 
+    @historia = Historium.all
   end
 
   # GET /historia/1

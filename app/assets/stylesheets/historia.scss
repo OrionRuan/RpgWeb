@@ -1,3 +1,193 @@
 // Place all the styles related to the historia controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+/*!
+ * Bootstrap v4.0.0-beta (https://getbootstrap.com)
+ * Copyright 2011-2017 The Bootstrap Authors
+ * Copyright 2011-2017 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+/**
+* Pulse Keyframes Animation
+*
+* @author Nick Pettit
+* @link https://github.com/nickpettit/glide
+*/
+.subtitle-variant-1 {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  
+  .subtitle-variant-2 {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+  
+  *+.subtitle-variant-2 {
+    margin-top: 8px;
+  }
+  
+  .subtitle-variant-3 {
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: .075em;
+}
+.textillate-text>span {
+    display: block;
+}
+.divider-sm {
+    max-width: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.divider-success {
+    border-top: 3px solid #5acea4;
+}
+
+@-webkit-keyframes pulse {
+    0% {
+      -webkit-transform: scale3d(0, 0, 0);
+      transform: scale3d(0, 0, 0);
+    }
+  
+    50% {
+      -webkit-transform: scale3d(1.5, 1.5, 1.5);
+      transform: scale3d(1.5, 1.5, 1.5);
+    }
+  
+    100% {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  
+  @-moz-keyframes pulse {
+    0% {
+      -webkit-transform: scale3d(0, 0, 0);
+      transform: scale3d(0, 0, 0);
+    }
+  
+    50% {
+      -webkit-transform: scale3d(1.5, 1.5, 1.5);
+      transform: scale3d(1.5, 1.5, 1.5);
+    }
+  
+    100% {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  
+  @-ms-keyframes pulse {
+    0% {
+      -webkit-transform: scale3d(0, 0, 0);
+      transform: scale3d(0, 0, 0);
+    }
+  
+    50% {
+      -webkit-transform: scale3d(1.5, 1.5, 1.5);
+      transform: scale3d(1.5, 1.5, 1.5);
+    }
+  
+    100% {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      -webkit-transform: scale3d(0, 0, 0);
+      transform: scale3d(0, 0, 0);
+    }
+  
+    50% {
+      -webkit-transform: scale3d(1.5, 1.5, 1.5);
+      transform: scale3d(1.5, 1.5, 1.5);
+    }
+  
+    100% {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  
+  .pulse {
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+  }
+  
+  @-webkit-keyframes pulseOut {
+    0% {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  
+    50% {
+      -webkit-transform: scale3d(1.5, 1.5, 1.5);
+      transform: scale3d(1.5, 1.5, 1.5);
+    }
+  
+    100% {
+      -webkit-transform: scale3d(0, 0, 0);
+      transform: scale3d(0, 0, 0);
+    }
+  }
+  
+  @-moz-keyframes pulseOut {
+    0% {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  
+    50% {
+      -webkit-transform: scale3d(1.5, 1.5, 1.5);
+      transform: scale3d(1.5, 1.5, 1.5);
+    }
+  
+    100% {
+      -webkit-transform: scale3d(0, 0, 0);
+      transform: scale3d(0, 0, 0);
+    }
+  }
+  
+  @-ms-keyframes pulseOut {
+    0% {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  
+    50% {
+      -webkit-transform: scale3d(1.5, 1.5, 1.5);
+      transform: scale3d(1.5, 1.5, 1.5);
+    }
+  
+    100% {
+      -webkit-transform: scale3d(0, 0, 0);
+      transform: scale3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes pulseOut {
+    0% {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  
+    50% {
+      -webkit-transform: scale3d(1.5, 1.5, 1.5);
+      transform: scale3d(1.5, 1.5, 1.5);
+    }
+  
+    100% {
+      -webkit-transform: scale3d(0, 0, 0);
+      transform: scale3d(0, 0, 0);
+    }
+  }
+  
+  .pulseOut {
+    -webkit-animation-name: pulseOut;
+    animation-name: pulseOut;
+  }
