@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_23_192607) do
+ActiveRecord::Schema.define(version: 2019_11_25_223823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,24 @@ ActiveRecord::Schema.define(version: 2019_11_23_192607) do
     t.index ["paihistoria_id"], name: "index_opcaos_on_paihistoria_id"
   end
 
+  create_table "user_historia", force: :cascade do |t|
+    t.bigint "historia_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["historia_id"], name: "index_user_historia_on_historia_id"
+    t.index ["user_id"], name: "index_user_historia_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   add_foreign_key "opcaos", "historia", column: "filhahistoria_id"
   add_foreign_key "opcaos", "historia", column: "paihistoria_id"
+  add_foreign_key "user_historia", "historia", column: "historia_id"
+  add_foreign_key "user_historia", "users"
 end
