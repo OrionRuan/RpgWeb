@@ -1,15 +1,45 @@
-<%= form_for :session, url: logged_in_path do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<p>New user? <%= link_to "Sign up now!", new_user_path %></p>
-<% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RPG</title>
+    <p id="notice"><%= notice %></p>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+  </head>
+  <body > 
+    <div class="page-loader">
+      <div class="page-loader-body">
+        <div class="cssload-jumping"><span></span><span></span><span></span><span></span><span></span></div>
+      </div>
+    </div>
+    <div class="page text-center">
+      <section>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-sm-10 col-lg-8">
+              <hr class="divider-sm divider-success">
+                <%= form_for :session, url: logged_in_path do |f| %>
+                  <div class = "div-border-back">
+                    <div class="field">
+                      <%= f.label :email %><br />
+                      <%= f.email_field :email, autofocus: true %>
+                    </div>
+                    <div class="field">
+                      <%= f.label :password %><br />
+                      <%= f.password_field :password, autocomplete: "off" %>
+                    </div>
+                    <div class="actions">
+                      <%= f.submit "Log in" %>
+                    </div>
+                    <p>Novo Usuário? <%= link_to "Casdastre-se!", new_user_path, class: "btn btn-white-outline btn-lg btn-aqil btn-aqil--mod-1" %></p>
+                  </div>
+                <% end %>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

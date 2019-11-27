@@ -1,31 +1,47 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Newhistoria</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Texto</th>
-      <th>Imagem</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @historia.each do |newhistorium| %>
-      <tr>
-        <td><%= newhistorium.nome %></td>
-        <td><%= newhistorium.texto %></td>
-        <td><%= newhistorium.imagem %></td>
-        <td><%= link_to 'Show', newhistorium %></td>
-        <td><%= link_to 'Edit', edit_historium_path(newhistorium) %></td>
-        <td><%= link_to 'Destroy', newhistorium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Newhistorium', new_historium_path %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RPG</title>
+    <p id="notice"><%= notice %></p>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+  </head>
+  <body > 
+    <%= render 'layouts/header' %>
+    <%= yield %>
+    <div class="page-loader">
+      <div class="page-loader-body">
+        <div class="cssload-jumping"><span></span><span></span><span></span><span></span><span></span></div>
+      </div>
+    </div>
+    <div class="page text-center">
+      <section>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-sm-10 col-lg-8">
+              <hr class="divider-sm divider-success">
+                
+                <p id="notice"><%= notice %></p>
+                <h1 class="text-white textillate-text"><span class = "textillate-text">Suas historias lhe esperam! </span></h1>
+                <div class = "div-border-back">
+                  <table>
+                    <tbody>
+                      <% @historia.each do |newhistorium| %>
+                        <tr>
+                          <td><h1><%= newhistorium.nome %></h1></td>
+                          <td><%= link_to 'Para a Aventura!', newhistorium, class: "btn btn-white-outline btn-lg btn-aqil btn-aqil--mod-1" %></td>
+                        </tr>
+                      <% end %>
+                    </tbody>
+                  </table>
+                </div>
+                <br>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

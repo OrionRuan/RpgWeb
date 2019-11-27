@@ -3,6 +3,7 @@ class CreateUserHistoria < ActiveRecord::Migration[6.0]
     create_table :user_historia do |t|
       t.references :historia, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true
+      t.integer :livro
 
       t.timestamps
     end

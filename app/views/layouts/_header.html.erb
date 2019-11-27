@@ -1,0 +1,13 @@
+<header>
+  <div>
+    <nav>
+      <ul>
+        <% if logged_in? %>
+          <%= link_to "Log out", logout_path, method: "delete", class: "btn btn-white-outline btn-lg btn-aqil btn-aqil--mod-1" %>
+        <% else %>
+          <%= link_to "Log in", root_path, class: "btn btn-white-outline btn-lg btn-aqil btn-aqil--mod-1" %>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>

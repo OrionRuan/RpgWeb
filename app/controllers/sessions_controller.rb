@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id
             redirect_to sessions_path
         else
-            render 'new'
+            redirect_to root_path, notice: 'Usuário ou senha incorretos.'
         end
    end 
 
@@ -25,6 +25,11 @@ class SessionsController < ApplicationController
 
    def logout
         reset_session
-        render json: { status: 200, logged_out: true}
+        @current_user = nil
    end
+
+   def destroy
+        logout
+        redirect_to root_url
+    end
 end

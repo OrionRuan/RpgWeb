@@ -4,13 +4,16 @@ class HistoriaController < ApplicationController
   # GET /historia
   # GET /historia.json
   def index
-    @historia = Historium.find([1])
+    @historia = Historium.where(id: [UserHistorium.select("historia_id").where(user_id: session[:user_id])])
   end
 
   # GET /historia/1
   # GET /historia/1.json
   def show
     @Opcao = Opcao.where("paihistoria_id = ?",params[:id]) 
+    user_hist = UserHistorium.select("id").where(user_id: session[:user_id], livro: @historium.livro).take
+    atualiza = { user_hist.id => { "historia_id" => @historium.id }}
+    UserHistorium.update(atualiza.keys, atualiza.values)
   end
 
   # GET /historia/new

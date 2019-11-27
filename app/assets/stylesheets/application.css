@@ -162,6 +162,14 @@
     background-color: #ebecee;
     -webkit-text-decoration-skip: objects;
   }
+
+  .div-border-back {
+    background-color: #ebecee;
+    border: 1px solid rgb(20, 19, 19);
+    border-radius: 0.25rem;
+    width: 40%;
+    margin: auto;
+  }
   
   a:hover {
     color: #3380ea;

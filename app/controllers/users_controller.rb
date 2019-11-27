@@ -7,7 +7,7 @@ class UsersController < ApplicationController
         user = User.create!(
             email: params['user']['email'],
             password: params['user']['password'],
-            password_confirmation: params['user']['password_confirmation']
+            password_confirmation: params['user']['password']
         )
 
         if user
@@ -16,12 +16,12 @@ class UsersController < ApplicationController
 			@historium.each do |livros|
 				inicio = Historium.where(livro: livros.livro).minimum("id")
 				now = Time.now
-				data = { historia_id: inicio, user_id: user.id, created_at: now, updated_at: now }
+				data = { historia_id: inicio, user_id: user.id, livro:livros.livro , created_at: now, updated_at: now }
 				UserHistorium.insert(data)
 			end
             redirect_to historia_path, notice: "Usuário foi criado com sucesso!"
         else
-            render json: { status: 500}
+            redirect_to new_user_path, notice: "Erro ao cadastrar Usuário!"
         end
     end
 
