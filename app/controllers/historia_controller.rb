@@ -4,7 +4,7 @@ class HistoriaController < ApplicationController
   # GET /historia
   # GET /historia.json
   def index
-    @historia = Historium.all
+    @historia = Historium.find([1])
   end
 
   # GET /historia/1

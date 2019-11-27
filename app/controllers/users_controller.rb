@@ -12,10 +12,13 @@ class UsersController < ApplicationController
 
         if user
             session[:user_id] = user.id
-            UserHistorium.create!(
-                historia: 1,
-                user: session[:user_id]
-            )
+			@historium = Historium.select(:livro).distinct
+			@historium.each do |livros|
+				inicio = Historium.where(livro: livros.livro).minimum("id")
+				now = Time.now
+				data = { historia_id: inicio, user_id: user.id, created_at: now, updated_at: now }
+				UserHistorium.insert(data)
+			end
             redirect_to historia_path, notice: "Usuário foi criado com sucesso!"
         else
             render json: { status: 500}

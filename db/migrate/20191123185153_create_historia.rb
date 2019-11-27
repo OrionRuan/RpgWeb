@@ -4,7 +4,8 @@ class CreateHistoria < ActiveRecord::Migration[6.0]
       t.string :nome
       t.text :texto
       t.string :imagem
-
+	    t.integer :livro
+	  
       t.timestamps
     end
   end

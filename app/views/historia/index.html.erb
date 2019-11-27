@@ -1,34 +1,31 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>RPG</title>
-    <p id="notice"><%= notice %></p>
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-  </head>
+<p id="notice"><%= notice %></p>
 
-<body >
-  <div class="page-loader">
-    <div class="page-loader-body">
-      <div class="cssload-jumping"><span></span><span></span><span></span><span></span><span></span></div>
-    </div>
-  </div>
-  <div class="page text-center">
-    <section>
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-sm-10 col-lg-8">
-            <hr class="divider-sm divider-success">
-            <h1 class="textillate text-white" data-loop="true"> <span class="textillate-text"> <span data-in-effect="pulse" data-out-effect="pulseOut">Seja bem vindo</span> <span data-in-effect="pulse" data-out-effect="pulseOut">a um mundo de fantasia</span> <span data-in-effect="pulse" data-out-effect="pulseOut">aventuras e imaginação!</span> </h1>
-            <p class="subtitle-variant-1 text-success">Feito por Orion</p> 
-            <%= link_to 'Inicie a sua Jornada', @nexthistoria = Historium.where(id:  UserHistorium.select("historia_id").where(user_id: session[:user_id])).take, class: "btn btn-white-outline btn-lg btn-aqil btn-aqil--mod-1" %>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-  <div class="snackbars" id="form-output-global"></div>
-</body>
-</html>
+<h1>Newhistoria</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Texto</th>
+      <th>Imagem</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @historia.each do |newhistorium| %>
+      <tr>
+        <td><%= newhistorium.nome %></td>
+        <td><%= newhistorium.texto %></td>
+        <td><%= newhistorium.imagem %></td>
+        <td><%= link_to 'Show', newhistorium %></td>
+        <td><%= link_to 'Edit', edit_historium_path(newhistorium) %></td>
+        <td><%= link_to 'Destroy', newhistorium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Newhistorium', new_historium_path %>
