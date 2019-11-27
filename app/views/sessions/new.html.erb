@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>RPG</title>
-    <p id="notice"><%= notice %></p>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,6 +21,7 @@
               <hr class="divider-sm divider-success">
                 <%= form_for :session, url: logged_in_path do |f| %>
                   <div class = "div-border-back">
+                    <p id="notice"><%= notice %></p>
                     <div class="field">
                       <%= f.label :email %><br />
                       <%= f.email_field :email, autofocus: true %>

@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>RPG</title>
-    <p id="notice"><%= notice %></p>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,7 +24,7 @@
                 
                 <p id="notice"><%= notice %></p>
                 <h1 class="text-white textillate-text"><span class = "textillate-text">Suas historias lhe esperam! </span></h1>
-                <div class = "div-border-back">
+                <div class = "div-border-back-2">
                   <table>
                     <tbody>
                       <% @historia.each do |newhistorium| %>
@@ -33,6 +32,7 @@
                           <td><h1><%= newhistorium.nome %></h1></td>
                           <td><%= link_to 'Para a Aventura!', newhistorium, class: "btn btn-white-outline btn-lg btn-aqil btn-aqil--mod-1" %></td>
                         </tr>
+                        <br>
                       <% end %>
                     </tbody>
                   </table>

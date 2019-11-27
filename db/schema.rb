@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_11_25_223823) do
     t.string "nome"
     t.text "texto"
     t.string "imagem"
+    t.integer "livro"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -34,11 +35,12 @@ ActiveRecord::Schema.define(version: 2019_11_25_223823) do
   end
 
   create_table "user_historia", force: :cascade do |t|
-    t.bigint "historia_id", null: false
+    t.bigint "historia_id_id"
     t.bigint "user_id", null: false
+    t.integer "livro"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["historia_id"], name: "index_user_historia_on_historia_id"
+    t.index ["historia_id_id"], name: "index_user_historia_on_historia_id_id"
     t.index ["user_id"], name: "index_user_historia_on_user_id"
   end
 
@@ -51,6 +53,6 @@ ActiveRecord::Schema.define(version: 2019_11_25_223823) do
 
   add_foreign_key "opcaos", "historia", column: "filhahistoria_id"
   add_foreign_key "opcaos", "historia", column: "paihistoria_id"
-  add_foreign_key "user_historia", "historia", column: "historia_id"
+  add_foreign_key "user_historia", "historia", column: "historia_id_id"
   add_foreign_key "user_historia", "users"
 end

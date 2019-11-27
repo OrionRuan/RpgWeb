@@ -12,8 +12,10 @@ class HistoriaController < ApplicationController
   def show
     @Opcao = Opcao.where("paihistoria_id = ?",params[:id]) 
     user_hist = UserHistorium.select("id").where(user_id: session[:user_id], livro: @historium.livro).take
-    atualiza = { user_hist.id => { "historia_id" => @historium.id }}
-    UserHistorium.update(atualiza.keys, atualiza.values)
+    UserHistorium.destroy_by(id: user_hist.id)
+    now = Time.now
+    data = { historia_id: @historium.id, user_id: session[:user_id], livro:@historium.livro , created_at: now, updated_at: now }
+    UserHistorium.insert(data)
   end
 
   # GET /historia/new

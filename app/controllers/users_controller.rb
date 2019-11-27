@@ -25,6 +25,15 @@ class UsersController < ApplicationController
         end
     end
 
+    def destroy
+        @user = User.find_by(id: session[:user_id])
+        @user.destroy
+        respond_to do |format|
+          format.html { redirect_to root_path, notice: 'Usuário deletado!' }
+          format.json { head :no_content }
+        end
+    end    
+
     private
     def user_params
         params.require(:user).permit(:name, :email, :password, :password_confirmation)

@@ -23,20 +23,16 @@
             <div class="col-sm-10 col-lg-8">
               <hr class="divider-sm divider-success">
               <p id="notice"><%= notice %></p>
-              <div class = "div-border-back">
+              <div class = "div-border-back-2">
                 <h1><%= @historium.nome %></h1>
                 <table>
                   <tbody>
                     <% @Opcao.each do |opcoes| %>
-                      <tr>
-                        <td><%= opcoes.texto %></td>
-                        <td><%= link_to 'Next', @nexthistoria = Historium.where("id = ?", opcoes.filhahistoria_id).take %></td>
-                      </tr>
+                        <%= link_to opcoes.texto, @nexthistoria = Historium.where("id = ?", opcoes.filhahistoria_id).take, class: "btn btn-white-outline btn-lg btn-aqil btn-aqil--mod-1" %>
+                        <br>
                     <% end %>  
-                    <tr>
-                      <td><%= @historium.texto %></td>
-                      <td><%= @historium.imagem %></td>
-                    </tr>
+                    <br>
+                    <%= @historium.texto %>
                   </tbody>
                 </table>
                 <br>

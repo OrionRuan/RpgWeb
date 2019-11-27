@@ -3,9 +3,10 @@
     <nav>
       <ul>
         <% if logged_in? %>
-          <%= link_to "Log out", logout_path, method: "delete", class: "btn btn-white-outline btn-lg btn-aqil btn-aqil--mod-1" %>
+          <%= link_to "Sair", logout_path, method: "delete", class: "btn btn-white-outline btn-lg btn-aqil btn-aqil--mod-1" %>
+          <%= link_to 'Deletar ususario', current_user, method: :delete, data: { confirm: 'Deseja mesmo deletar sua conta?' },class: "btn btn-white-outline btn-lg btn-aqil btn-aqil--mod-1" %>
         <% else %>
-          <%= link_to "Log in", root_path, class: "btn btn-white-outline btn-lg btn-aqil btn-aqil--mod-1" %>
+          <%= link_to "Entrar", root_path, class: "btn btn-white-outline btn-lg btn-aqil btn-aqil--mod-1" %>
         <% end %>
       </ul>
     </nav>
